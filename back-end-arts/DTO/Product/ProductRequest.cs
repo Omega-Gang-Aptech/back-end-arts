@@ -7,8 +7,9 @@ namespace back_end_arts.DTO.Product
 {
     public class ProductRequest
     {
+        public string ProductId { get; set; }
         public string ProductName { get; set; }
-        public string Category { get; set; }
-        public float Price { get; set; }
+        public int Category { get; set; }
+        public int Price { get; set; }
     }
 }
