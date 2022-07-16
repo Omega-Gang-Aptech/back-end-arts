@@ -4,6 +4,7 @@ using back_end_arts.DTO.User.Response;
 using back_end_arts.Interface;
 using back_end_arts.Models;
 using back_end_arts.Repository;
+using back_end_arts.Specification;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -44,10 +45,11 @@ namespace back_end_arts.Controllers
                     Tags = new[] { "UserController" })]
         public async Task<ActionResult<LoginResponse>> Login(LoginRequest request)
         {
+            
             if (ModelState.IsValid)
             {
-                var existingUser = await _employeeManager.GetById(request.UserName);
-
+                var userTokenSpec = new UserTokenSpec(request.UserName);
+                var existingUser = await _employeeManager.GetAsyncSpec(userTokenSpec);
 
                 if (existingUser == null)
                 {

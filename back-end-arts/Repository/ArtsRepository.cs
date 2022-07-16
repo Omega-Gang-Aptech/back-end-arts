@@ -68,7 +68,10 @@ namespace back_end_arts.Repository
             return await specificationResult.ToListAsync();
         }
 
-       
+        public Task<T> GetByName<TName>(TName name)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class SpecificationEvaluator : ISpecificationEvaluator
     {
