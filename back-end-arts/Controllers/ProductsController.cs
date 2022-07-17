@@ -23,7 +23,7 @@ namespace back_end_arts.Controllers
 
 
         ///Product
-        [HttpGet("Categories")]
+        [HttpGet("Products")]
         public async Task<IEnumerable<Product>> GetCategories()
         {
             return await db_Product.ListAll();
@@ -71,6 +71,65 @@ namespace back_end_arts.Controllers
             }
             await db_Product.Delete(data);
             return NoContent();
+        }
+        public static void generateProductID(string ProductCode, string ProductId)
+        {
+            // Case 1: Product id null
+            string tempPrdId = null;
+            if (String.IsNullOrEmpty(ProductId))
+            {
+                tempPrdId = "00001";
+                string ProductIdLatest = ProductCode + tempPrdId;
+                Console.Write(ProductIdLatest);
+                Console.Write("\n");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                // Case 2:  increase ProductId 0100001
+                string productNumStr = ProductId.Substring(2);
+                string productIdStr = ProductId.Substring(0, 2);
+                int productNumInt = Int32.Parse(productNumStr);
+                if (productNumInt == 99999) // Case: ProductId overwhelm
+                {
+                    //Console.Write("The Product Number is overwhelm. Cannot insert anymore");
+                    //Console.ReadLine();
+                    return;
+                }
+                else
+                {
+                    productNumInt++;
+                }
+                string productNumIntTemp = productNumInt.ToString();
+                int productNumIntCnt = productNumIntTemp.Count();
+                switch (productNumIntCnt)
+                {
+                    case 5:
+                        tempPrdId = productNumInt.ToString();
+                        break;
+                    case 4:
+                        tempPrdId = "0" + productNumInt;
+                        break;
+                    case 3:
+                        tempPrdId = "00" + productNumInt;
+                        break;
+                    case 2:
+                        tempPrdId = "000" + productNumInt;
+                        break;
+                    case 1:
+                        tempPrdId = "0000" + productNumInt;
+                        break;
+                    default:
+                        break;
+                }
+
+                string ProductIdLatest = productIdStr + tempPrdId;
+                //Console.Write(ProductIdLatest);
+                //Console.Write("\n");
+                //Console.ReadLine();
+
+            }
         }
     }
 }

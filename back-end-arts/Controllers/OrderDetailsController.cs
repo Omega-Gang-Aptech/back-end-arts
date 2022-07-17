@@ -21,7 +21,7 @@ namespace back_end_arts.Controllers
 
 
         ///OrderDetail
-        [HttpGet("Categories")]
+        [HttpGet("OrderDetails")]
         public async Task<IEnumerable<OrderDetail>> GetCategories()
         {
             return await db_orderdetail.ListAll();
