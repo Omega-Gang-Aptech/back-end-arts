@@ -88,12 +88,12 @@ namespace back_end_arts.Models
                 entity.HasOne(d => d.FeedbackProduct)
                     .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.FeedbackProductId)
-                    .HasConstraintName("FK__Feedback__feedba__38996AB5");
+                    .HasConstraintName("FK__Feedback__feedba__32E0915F");
 
                 entity.HasOne(d => d.FeedbackUser)
                     .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.FeedbackUserId)
-                    .HasConstraintName("FK__Feedback__feedba__37A5467C");
+                    .HasConstraintName("FK__Feedback__feedba__31EC6D26");
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -135,13 +135,13 @@ namespace back_end_arts.Models
                 entity.HasOne(d => d.OrderUser)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.OrderUserId)
-                    .HasConstraintName("FK__Order__orderUser__30F848ED");
+                    .HasConstraintName("FK__Order__orderUser__33D4B598");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => e.DetailId)
-                    .HasName("PK__OrderDet__83077859188393CD");
+                    .HasName("PK__OrderDet__83077859243A345E");
 
                 entity.ToTable("OrderDetail");
 
@@ -175,12 +175,12 @@ namespace back_end_arts.Models
                 entity.HasOne(d => d.DetailOrder)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.DetailOrderId)
-                    .HasConstraintName("FK__OrderDeta__detai__33D4B598");
+                    .HasConstraintName("FK__OrderDeta__detai__34C8D9D1");
 
                 entity.HasOne(d => d.DetailProduct)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.DetailProductId)
-                    .HasConstraintName("FK__OrderDeta__detai__34C8D9D1");
+                    .HasConstraintName("FK__OrderDeta__detai__35BCFE0A");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -225,7 +225,7 @@ namespace back_end_arts.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Product__categor__2E1BDC42");
+                    .HasConstraintName("FK__Product__categor__36B12243");
             });
 
             modelBuilder.Entity<RefreshToken>(entity =>
@@ -239,7 +239,7 @@ namespace back_end_arts.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.RefreshTokens)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__RefreshTo__userI__2B3F6F97");
+                    .HasConstraintName("FK__RefreshTo__userI__37A5467C");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -306,14 +306,17 @@ namespace back_end_arts.Models
                     .IsUnicode(false)
                     .HasColumnName("userName");
 
-                entity.Property(e => e.UserPhone).HasColumnName("userPhone");
+                entity.Property(e => e.UserPhone)
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnName("userPhone");
 
                 entity.Property(e => e.UserRole).HasColumnName("userRole");
 
                 entity.HasOne(d => d.UserRoleNavigation)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.UserRole)
-                    .HasConstraintName("FK__User__userRole__286302EC");
+                    .HasConstraintName("FK__User__userRole__38996AB5");
             });
 
             OnModelCreatingPartial(modelBuilder);

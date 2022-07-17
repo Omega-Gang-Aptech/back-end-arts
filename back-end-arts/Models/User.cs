@@ -19,7 +19,7 @@ namespace back_end_arts.Models
         public string Password { get; set; }
         public string UserFullName { get; set; }
         public string UserEmail { get; set; }
-        public int? UserPhone { get; set; }
+        public string UserPhone { get; set; }
         public bool? UserGender { get; set; }
         public string UserAvatar { get; set; }
         public string UserAddress { get; set; }

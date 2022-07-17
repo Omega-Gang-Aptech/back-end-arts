@@ -21,7 +21,7 @@ namespace back_end_arts.Controllers
 
 
         ///Feedback
-        [HttpGet("Categories")]
+        [HttpGet("Feedbacks")]
         public async Task<IEnumerable<Feedback>> GetCategories()
         {
             return await db_feedback.ListAll();
