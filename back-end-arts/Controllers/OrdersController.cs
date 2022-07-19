@@ -27,7 +27,7 @@ namespace back_end_arts.Controllers
             return await db_order.ListAll();
         }
         [HttpGet("Order")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<Order>> GetOrder(string id)
         {
             return await db_order.GetById(id);
         }
@@ -59,7 +59,7 @@ namespace back_end_arts.Controllers
 
         }
         [HttpDelete("OrderId")]
-        public async Task<ActionResult<Order>> DeleteOrder(int id)
+        public async Task<ActionResult<Order>> DeleteOrder(string id)
         {
             var data = await db_order.GetById(id);
             if (data == null)
