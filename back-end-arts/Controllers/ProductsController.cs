@@ -12,7 +12,7 @@ namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private IArtsRepository<Product> db_Product;
@@ -29,7 +29,7 @@ namespace back_end_arts.Controllers
             return await db_Product.ListAll();
         }
         [HttpGet("Product")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(string id)
         {
             return await db_Product.GetById(id);
         }
@@ -62,7 +62,7 @@ namespace back_end_arts.Controllers
 
         }
         [HttpDelete("ProductId")]
-        public async Task<ActionResult> DeleteProduct(int id)
+        public async Task<ActionResult> DeleteProduct(string id)
         {
             var data = await db_Product.GetById(id);
             if (data == null)

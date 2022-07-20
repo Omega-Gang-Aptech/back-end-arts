@@ -66,8 +66,8 @@ namespace back_end_arts.Controllers
                         {
                             ProductId = productRequest.ProductId, // ProductId String - not generate
                             ProductName = productRequest.ProductName,
-                            CategoryId = productRequest.Category,
-                            ProductPrice = productRequest.Price,
+                            CategoryId = productRequest.CategoryId,
+                            ProductPrice = productRequest.ProductPrice,
                         };
 
                         // Luu Product xuong BD
