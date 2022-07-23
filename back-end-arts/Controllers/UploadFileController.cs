@@ -41,7 +41,6 @@ namespace back_end_arts.Controllers
 
             try
             {
-
                 // Config JSON 
                 var options = new JsonSerializerOptions
                 {
@@ -70,11 +69,11 @@ namespace back_end_arts.Controllers
                             ProductPrice = productRequest.ProductPrice,
                         };
 
-                        // Luu Product xuong BD
+                        // Luu Product xuong DB
 
                         await _repository.Insert(product);
                         // Sau khi luu Product se co duoc Product Id
-                        var filePath = Path.Combine(_env.ContentRootPath, "Images", product.ProductId.ToString());
+                        var filePath = Path.Combine(_env.ContentRootPath, "Images/Products", product.ProductId.ToString());
                         if (!Directory.Exists(filePath))
                         {
                             Directory.CreateDirectory(filePath);
@@ -85,7 +84,7 @@ namespace back_end_arts.Controllers
                         await formFile.CopyToAsync(stream);
 
                         // Cap nhat lai url cua san pham sau luu xong hinh anh
-                        product.ProductImage = "Images/" + product.ProductId.ToString() + "/" + formFile.FileName;
+                        product.ProductImage = "Images/Products/" + product.ProductId.ToString() + "/" + formFile.FileName;
                         await _repository.Update(product);
 
 
@@ -115,6 +114,58 @@ namespace back_end_arts.Controllers
             }
         }
 
+        //[Authorize]
+        [HttpPost]
+        [Route("UpdateFile")]
+        [SwaggerOperation(
+            Summary = "UpdateFile",
+            Description = "UpdateFile",
+            OperationId = "UpdateFile",
+            Tags = new[] { "UpdateFile" })]
+        public async Task<ActionResult<HttpResponseMessage>> updateProduct(List<IFormFile> files, [FromForm] string productJson)
+        {
+            // Config JSON
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString
+            };
+
+            // Convert JSON string sang Object
+            var productRequest = JsonSerializer.Deserialize<Product>(productJson, options);
+
+            try
+            {
+                var formFile = files[0];
+                if (formFile.Length > 0)
+                {
+                    var filePath = Path.Combine(_env.ContentRootPath, "Images/Products/", productRequest.ProductId.ToString());
+                    if (!Directory.Exists(filePath))
+                    {
+                        Directory.CreateDirectory(filePath);
+                    }
+                    filePath = Path.Combine(filePath, formFile.FileName);
+                    // Must be same name 
+                    using var stream = new FileStream(filePath, FileMode.Create);
+                    await formFile.CopyToAsync(stream);
+
+                    // Cap nhat lai url cua san pham sau luu xong hinh anh
+                    productRequest.ProductImage = "Images/Products/" + productRequest.ProductId.ToString() + "/" + formFile.FileName;
+                    var updatePro = await _repository.Update(productRequest);
+                    return Ok(updatePro);
+                }
+                else
+                {
+                    var updatePro = await _repository.Update(productRequest);
+                    return Ok(updatePro);
+                }
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
         private ActionResult<HttpResponseMessage> BadRequest()
         {
             throw new NotImplementedException();

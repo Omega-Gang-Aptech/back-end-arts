@@ -11,6 +11,7 @@ namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class FeedbacksController : ControllerBase
     {
         private IArtsRepository<Feedback> db_feedback;
