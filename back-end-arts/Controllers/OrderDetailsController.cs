@@ -11,6 +11,7 @@ namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class OrderDetailsController : ControllerBase
     {
         private IArtsRepository<OrderDetail> db_orderdetail;

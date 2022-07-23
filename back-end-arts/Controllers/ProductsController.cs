@@ -1,24 +1,32 @@
 ﻿using back_end_arts.Models;
 using back_end_arts.Repository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProductsController : ControllerBase
     {
-        private IArtsRepository<Product> db_Product;
-        public ProductsController(IArtsRepository<Product> db_Product)
+        private readonly IWebHostEnvironment _env;
+        private IArtsRepository<Product> db_product;
+        private IArtsRepository<Category> db_category;
+        public ProductsController(IWebHostEnvironment env,IArtsRepository<Product> db_product, IArtsRepository<Category> db_category)
         {
-            this.db_Product = db_Product;
+            _env = env;
+            this.db_product = db_product;
+            this.db_category = db_category;
         }
 
 
@@ -26,64 +34,212 @@ namespace back_end_arts.Controllers
         [HttpGet("Products")]
         public async Task<IEnumerable<Product>> GetCategories()
         {
-            return await db_Product.ListAll();
+            return await db_product.ListAll();
         }
         [HttpGet("Product")]
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
-            return await db_Product.GetById(id);
+            return await db_product.GetById(id);
         }
+        //[HttpPost("CreateProduct")]
+        //public async Task<ActionResult<Product>> CreateProduct([FromBody] Product Product)
+        //{
+        //    await db_product.Insert(Product);
+        //    return CreatedAtAction(nameof(GetCategories), new { id = Product.ProductId }, Product);
+        //}
         [HttpPost("CreateProduct")]
-        public async Task<ActionResult<Product>> CreateProduct([FromBody] Product Product)
+        public async Task<ActionResult<Product>> CreateProduct(List<IFormFile> files, [FromForm] string productJson)
         {
+            try
+            {
+                // Config JSON 
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString
+                };
 
-            await db_Product.Insert(Product);
-            return CreatedAtAction(nameof(GetCategories), new { id = Product.ProductId }, Product);
+                var productRequest = JsonSerializer.Deserialize<Product>(productJson, options);
+
+                // -Generate Product ID--------------------------------------------------------------------------------- 
+                var objCategory = await db_category.GetById(Int32.Parse(productRequest.CategoryId.ToString()));
+                var objProductLst = await db_product.ListAll();
+                var maxProdCd = objProductLst
+                                    .Where(item => item.ProductId.Substring(0, 2) == objCategory.CategoryCode).Max(item=>item.ProductId);
+
+                var newProdCd = this.generateProductID(objCategory.CategoryCode.ToString(), maxProdCd);
+                // -----------------------------------------------------------------------------------------------------
+               
+                // Khoi tao mot product moi
+                Product product = null;
+                product = new Product()
+                {
+                    //ProductId = this.initProductID(productRequest.CategoryId.ToString()),
+                    ProductId = newProdCd, // ProductId String - not generate
+                    ProductName = productRequest.ProductName,
+                    ProductPrice = productRequest.ProductPrice,
+                    ProductQuantity = productRequest.ProductQuantity,
+                    ProductShortDescription = productRequest.ProductShortDescription,
+                    ProductLongDescription = productRequest.ProductLongDescription,
+                    ProductStatus = productRequest.ProductQuantity,
+                    CategoryId = productRequest.CategoryId, // *
+                    UpdatedAt = productRequest.UpdatedAt
+                };
+
+                // Luu Product xuong DB
+                await db_product.Insert(product);
+
+                if (files.Count > 0)
+                {
+                    var formFile = files[0];
+                    if (formFile.Length > 0)
+                    {
+                        // Sau khi luu Product se co duoc Product Id
+                        var filePath = Path.Combine(_env.ContentRootPath, "Images/Products", newProdCd);
+                        if (!Directory.Exists(filePath))
+                        {
+                            Directory.CreateDirectory(filePath);
+                        }
+                        filePath = Path.Combine(filePath, formFile.FileName);
+
+                        using var stream = new FileStream(filePath, FileMode.Create);
+                        await formFile.CopyToAsync(stream);
+
+                        // Cap nhat lai url cua san pham sau luu xong hinh anh
+                        product.ProductImage = "Images/Products/" + product.ProductId.ToString() + "/" + formFile.FileName;
+                        await db_product.Update(product);
+                    }
+                }
+                else
+                {
+                    
+                }
+
+                var response = new
+                {
+                    product.ProductId,
+                    product.ProductName,
+                    product.ProductPrice,
+                    product.ProductQuantity,
+                    product.ProductImage,
+                    product.ProductShortDescription,
+                    product.ProductLongDescription,
+                    product.ProductStatus,
+                    product.CategoryId,
+                    product.UpdatedAt,
+                };
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
         [HttpPut("UpdateProduct")]
-        public async Task<ActionResult<Product>> UpdateProduct([FromBody] Product Product)
+        public async Task<ActionResult<Product>> UpdateProduct(List<IFormFile> files, [FromForm] string productJson)
         {
-            var data = await db_Product.GetById(Product.ProductId);
-            if (data != null)
+            var options = new JsonSerializerOptions
             {
-                data.ProductName = Product.ProductName;
-                data.ProductPrice = Product.ProductPrice;
-                data.ProductQuantity = Product.ProductQuantity;
-                data.ProductImage = Product.ProductImage;
-                data.ProductShortDescription = Product.ProductShortDescription;
-                data.ProductLongDescription = Product.ProductLongDescription;
-                data.ProductStatus = Product.ProductStatus;
-                data.UpdatedAt = Product.UpdatedAt;
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString
+            };
 
-                await db_Product.Update(data);
-                return Ok();
+            // Convert JSON string sang Object
+            var productRequest = JsonSerializer.Deserialize<Product>(productJson, options);
+
+            try
+            {
+                var formFile = files[0];
+                if (formFile.Length > 0)
+                {
+                    var filePath = Path.Combine(_env.ContentRootPath, "Images/Products/", productRequest.ProductId.ToString());
+                    if (!Directory.Exists(filePath))
+                    {
+                        Directory.CreateDirectory(filePath);
+                    }
+                    else
+                    {
+                        Directory.Delete(filePath, true);
+                        Directory.CreateDirectory(filePath);
+                    }
+                    filePath = Path.Combine(filePath, formFile.FileName);
+                    // Must be same name 
+                    using var stream = new FileStream(filePath, FileMode.Create);
+                    await formFile.CopyToAsync(stream);
+
+                    // Cap nhat lai url cua san pham sau luu xong hinh anh
+                    productRequest.ProductImage = "Images/Products/" + productRequest.ProductId.ToString() + "/" + formFile.FileName;
+                    var updatePro = await db_product.Update(productRequest);
+                    return Ok(updatePro);
+                }
+                else
+                {
+                    var updatePro = await db_product.Update(productRequest);
+                    return Ok(updatePro);
+                }
             }
-            return NotFound();
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
+            //var data = await db_product.GetById(Product.ProductId);
+            //if (data != null)
+            //{
+            //    data.ProductName = Product.ProductName;
+            //    data.ProductPrice = Product.ProductPrice;
+            //    data.ProductQuantity = Product.ProductQuantity;
+            //    data.ProductImage = Product.ProductImage;
+            //    data.ProductShortDescription = Product.ProductShortDescription;
+            //    data.ProductLongDescription = Product.ProductLongDescription;
+            //    data.ProductStatus = Product.ProductStatus;
+            //    data.UpdatedAt = Product.UpdatedAt;
+
+            //    await db_product.Update(data);
+            //    return Ok();
+            //}
+            //return NotFound();
 
         }
         [HttpDelete("ProductId")]
         public async Task<ActionResult> DeleteProduct(string id)
         {
-            var data = await db_Product.GetById(id);
+            var data = await db_product.GetById(id);
             if (data == null)
             {
                 return NotFound();
             }
-            await db_Product.Delete(data);
+            await db_product.Delete(data);
             return NoContent();
         }
-        public static void generateProductID(string ProductCode, string ProductId)
+
+        //private async Task<string> initProductIDAsync(string CategoryId)
+        //{
+        //    int CategoryIdNUm = Int32.Parse(CategoryId);
+        //    //Category category = null;
+        //    var objCategory = await db_Category.GetById(CategoryIdNUm);
+        //    if (objCategory != null)
+        //    {
+        //        var objCateCd = objCategory.CategoryCode;
+        //    }
+        //    //var objProduct = await db_
+
+        //    return "";
+        //}
+
+        private string generateProductID(string ProductCode, string ProductId)
         {
+
+            // CategoryCode = ProductCode
+            // ProductId = Latest(ProductId)
             // Case 1: Product id null
             string tempPrdId = null;
             if (String.IsNullOrEmpty(ProductId))
             {
                 tempPrdId = "00001";
                 string ProductIdLatest = ProductCode + tempPrdId;
-                Console.Write(ProductIdLatest);
-                Console.Write("\n");
-                Console.ReadLine();
-                return;
+
+                return ProductIdLatest;
             }
             else
             {
@@ -93,9 +249,8 @@ namespace back_end_arts.Controllers
                 int productNumInt = Int32.Parse(productNumStr);
                 if (productNumInt == 99999) // Case: ProductId overwhelm
                 {
-                    //Console.Write("The Product Number is overwhelm. Cannot insert anymore");
-                    //Console.ReadLine();
-                    return;
+                    //throw new Exception("The Order Number is overwhelm. Cannot insert anymore");
+                    return null;
                 }
                 else
                 {
@@ -125,10 +280,7 @@ namespace back_end_arts.Controllers
                 }
 
                 string ProductIdLatest = productIdStr + tempPrdId;
-                //Console.Write(ProductIdLatest);
-                //Console.Write("\n");
-                //Console.ReadLine();
-
+                return ProductIdLatest;
             }
         }
     }

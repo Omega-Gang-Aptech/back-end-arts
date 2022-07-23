@@ -12,7 +12,7 @@ namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CategoriesController : ControllerBase
     {
         private IArtsRepository<Category> db_category;
