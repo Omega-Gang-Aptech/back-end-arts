@@ -18,15 +18,14 @@ namespace back_end_arts.Controllers
     public class OrdersController : ControllerBase
     {
         private IArtsRepository<Order> db_order;
-        public OrdersController(IArtsRepository<Order> db_order)
+        public OrdersController(IArtsRepository<OrderDetail> db_orderdetail,IArtsRepository<Order> db_order)
         {
             this.db_order = db_order;
         }
 
-
         ///Order
         [HttpGet("Orders")]
-        public async Task<IEnumerable<Order>> GetCategories()
+        public async Task<IEnumerable<Order>> GetOrders()
         {
             return await db_order.ListAll();
         }
