@@ -72,6 +72,7 @@ namespace back_end_arts.Repository
         {
             throw new NotImplementedException();
         }
+
     }
     public class SpecificationEvaluator : ISpecificationEvaluator
     {
