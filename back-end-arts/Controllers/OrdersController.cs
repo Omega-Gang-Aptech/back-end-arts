@@ -52,6 +52,7 @@ namespace back_end_arts.Controllers
                 OrderDescription = Order.OrderDescription,
                 OrderCreateDate = dateTime,
                 OrderStatus = Order.OrderStatus,
+                OrderTotal = Order.OrderTotal,
                 OrderPaymentMethods = Order.OrderPaymentMethods,
                 OrderDeliveryType = Order.OrderDeliveryType,
                 UpdatedAt = dateTime
@@ -71,6 +72,7 @@ namespace back_end_arts.Controllers
                 data.OrderAddress = Order.OrderAddress;
                 data.OrderDescription = Order.OrderDescription;
                 data.OrderStatus = Order.OrderStatus;
+                data.OrderTotal = Order.OrderTotal;
                 data.OrderPaymentMethods = Order.OrderPaymentMethods;
                 data.OrderDeliveryType = Order.OrderDeliveryType;
                 data.UpdatedAt = dateTime;

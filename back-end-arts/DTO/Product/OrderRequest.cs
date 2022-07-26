@@ -12,6 +12,7 @@ namespace back_end_arts.DTO.Product
         public string OrderAddress { get; set; }
         public string OrderDescription { get; set; }
         public int? OrderStatus { get; set; }
+        public double? OrderTotal { get; set; }
         public int? OrderPaymentMethods { get; set; }
         public int? OrderDeliveryType { get; set; }
     }
