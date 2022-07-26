@@ -35,82 +35,45 @@ namespace back_end_arts.Controllers
             return await db_order.GetById(id);
         }
         [HttpPost("CreateOrder")]
-        public async Task<ActionResult<Order>> CreateOrder([FromForm] string orderJson)
+        public async Task<ActionResult<Order>> CreateOrder([FromBody] OrderRequest Order)
         {
-            try
+            var objOrderLst = await db_order.ListAll();
+            var maxOrderCd = objOrderLst
+                                .Where(item => item.OrderId.Substring(0, 8) == Order.OrderTypeId).Max(item => item.OrderId);
+
+            var newOrderCd = this.generateOrderID(Order.OrderTypeId.ToString(), maxOrderCd);
+            DateTime dateTime = DateTime.UtcNow.Date;
+            Order order = null;
+            order = new Order()
             {
-                // Config JSON 
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                    NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString
-                };
-
-                var orderRequest = JsonSerializer.Deserialize<OrderRequest>(orderJson, options);
-
-                // -Generate Order ID--------------------------------------------------------------------------------- 
-                
-                var objOrderLst = await db_order.ListAll();
-                var maxOrderCd = objOrderLst
-                                    .Where(item => item.OrderId.Substring(0, 8) == orderRequest.OrderTypeId).Max(item => item.OrderId);
-
-                var newOrderCd = this.generateOrderID(orderRequest.OrderTypeId.ToString(), maxOrderCd);
-                // -----------------------------------------------------------------------------------------------------
-
-                // Khoi tao mot product moi
-                Order order = null;
-                order = new Order()
-                {
-                    //ProductId = this.initProductID(productRequest.CategoryId.ToString()),
-                    OrderId = newOrderCd, // ProductId String - not generate
-                    OrderUserId = orderRequest.OrderUserId,
-                    OrderAddress = orderRequest.OrderAddress,
-                    OrderDescription = orderRequest.OrderDescription,
-                    OrderCreateDate = orderRequest.OrderCreateDate,
-                    OrderStatus = orderRequest.OrderStatus,
-                    OrderPaymentMethods = orderRequest.OrderPaymentMethods,
-                    OrderDeliveryType = orderRequest.OrderDeliveryType, // *
-                    UpdatedAt = orderRequest.UpdatedAt
-                };
-
-                // Luu Product xuong DB
-                await db_order.Insert(order);
-
-                var response = new
-                {
-                    newOrderCd,
-                    //orderRequest.OrderUserId,
-                    //orderRequest.OrderAddress,
-                    //orderRequest.OrderDescription,
-                    //orderRequest.OrderCreateDate,
-                    //orderRequest.OrderStatus,
-                    //orderRequest.OrderPaymentMethods,
-                    //orderRequest.OrderDeliveryType, 
-                    //orderRequest.UpdatedAt
-                };
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            //await db_order.Insert(Order);
-            //return CreatedAtAction(nameof(GetCategories), new { id = Order.OrderId }, Order);
+                OrderId = newOrderCd, 
+                OrderUserId = Order.OrderUserId,
+                OrderAddress = Order.OrderAddress,
+                OrderDescription = Order.OrderDescription,
+                OrderCreateDate = dateTime,
+                OrderStatus = Order.OrderStatus,
+                OrderPaymentMethods = Order.OrderPaymentMethods,
+                OrderDeliveryType = Order.OrderDeliveryType,
+                UpdatedAt = dateTime
+            };
+            await db_order.Insert(order);
+            return Ok(order);
+            //return CreatedAtAction(nameof(GetOrders), new { id = order.OrderId }, Order);
         }
         [HttpPut("UpdateOrder")]
         public async Task<ActionResult<Order>> UpdateOrder([FromBody] Order Order)
         {
             var data = await db_order.GetById(Order.OrderId);
+            DateTime dateTime = DateTime.UtcNow.Date;
             if (data != null)
             {
                 data.OrderUserId = Order.OrderUserId;
                 data.OrderAddress = Order.OrderAddress;
                 data.OrderDescription = Order.OrderDescription;
-                data.OrderCreateDate = Order.OrderCreateDate;
                 data.OrderStatus = Order.OrderStatus;
                 data.OrderPaymentMethods = Order.OrderPaymentMethods;
                 data.OrderDeliveryType = Order.OrderDeliveryType;
-                data.UpdatedAt = Order.UpdatedAt;
+                data.UpdatedAt = dateTime;
                 await db_order.Update(data);
                 return Ok();
             }

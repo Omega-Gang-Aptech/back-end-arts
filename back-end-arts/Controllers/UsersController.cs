@@ -52,85 +52,12 @@ namespace back_end_arts.Controllers
             return await db_User.GetById(id);
         }
         [HttpPost("CreateUser")]
-        public async Task<ActionResult<User>> CreateUser(List<IFormFile> files, [FromForm] string userJson)
+        public async Task<ActionResult<User>> CreateUser([FromBody] User User)
         {
-            try
-            {
-                // Config JSON 
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                    NumberHandling = JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString
-                };
-
-                var userRequest = JsonSerializer.Deserialize<User>(userJson, options);
-
-                // Khoi tao mot product moi
-                User user = null;
-                user = new User()
-                {
-                    UserName = userRequest.UserName,
-                    Password = EncodePassword(userRequest.Password),
-                    UserFullName = userRequest.UserFullName,
-                    UserEmail = userRequest.UserEmail,
-                    UserPhone = userRequest.UserPhone,
-                    UserGender = userRequest.UserGender,
-                    UserAvatar = userRequest.UserAvatar,
-                    UserAddress = userRequest.UserAddress,
-                    UserRole = userRequest.UserRole,
-                    UpdatedAt = userRequest.UpdatedAt
-                };
-
-                await db_User.Insert(user);
-
-                if (files.Count > 0)
-                {
-                    var formFile = files[0];
-                    if (formFile.Length > 0)
-                    {
-                        var filePath = Path.Combine(_env.ContentRootPath, "Images/Users", userRequest.UserName.ToString());
-                        if (!Directory.Exists(filePath))
-                        {
-                            Directory.CreateDirectory(filePath);
-                        }
-                        filePath = Path.Combine(filePath, formFile.FileName);
-
-                        using var stream = new FileStream(filePath, FileMode.Create);
-                        await formFile.CopyToAsync(stream);
-
-                        // Cap nhat lai url cua san pham sau luu xong hinh anh
-                        user.UserAvatar = "Images/Users/" + userRequest.UserName.ToString() + "/" + formFile.FileName;
-                        await db_User.Update(user);
-                    }
-                }
-                else
-                {
-                    
-                }
-
-                var response = new
-                {
-                    userRequest.UserName,
-                    userRequest.Password,
-                    userRequest.UserFullName,
-                    userRequest.UserEmail,
-                    userRequest.UserPhone,
-                    userRequest.UserGender,
-                    userRequest.UserAvatar,
-                    userRequest.UserAddress,
-                    userRequest.UserRole,
-                    userRequest.UpdatedAt
-                };
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            //User.Password = EncodePassword(User.Password);
-            //await db_User.Insert(User);
-            //return CreatedAtAction(nameof(GetCategories), new { id = User.UserId }, User);
-        } 
+            User.Password = EncodePassword(User.Password);
+            await db_User.Insert(User);
+            return CreatedAtAction(nameof(GetCategories), new { id = User.UserId }, User);
+        }
         [HttpPut("UpdateUser")]
         public async Task<ActionResult<User>> UpdateUser(List<IFormFile> files, [FromForm] string userJson)
         {

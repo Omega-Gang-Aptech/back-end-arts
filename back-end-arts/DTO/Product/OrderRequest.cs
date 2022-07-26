@@ -11,10 +11,8 @@ namespace back_end_arts.DTO.Product
         public int? OrderUserId { get; set; }
         public string OrderAddress { get; set; }
         public string OrderDescription { get; set; }
-        public DateTime? OrderCreateDate { get; set; }
         public int? OrderStatus { get; set; }
         public int? OrderPaymentMethods { get; set; }
         public int? OrderDeliveryType { get; set; }
-        public DateTime? UpdatedAt { get; set; }
     }
 }
