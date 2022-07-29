@@ -55,7 +55,8 @@ namespace back_end_arts
                                   {
                                       builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .WithOrigins("http://localhost:3000")
+            //.WithOrigins("http://localhost:3000")
+            .SetIsOriginAllowed(origin => true)
             .AllowCredentials();
                                   });
             });
@@ -130,6 +131,9 @@ namespace back_end_arts
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options =>options.WithOrigins("http://localhost:3000")
+                                  .AllowAnyHeader()
+                                  .AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -139,9 +143,15 @@ namespace back_end_arts
 
             app.UseHttpsRedirection();
             app.UseRouting();
-
+            app.UseCors(AllowSpecificOrigins);
             app.UseAuthentication();
             app.UseAuthorization();
+
+            if (!Directory.Exists(Path.Combine(env.ContentRootPath, "Images")))
+            {
+                Directory.CreateDirectory(Path.Combine(env.ContentRootPath, "Images"));
+            }
+
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Images")),

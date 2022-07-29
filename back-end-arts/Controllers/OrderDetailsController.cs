@@ -11,6 +11,7 @@ namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class OrderDetailsController : ControllerBase
     {
         private IArtsRepository<OrderDetail> db_orderdetail;
@@ -22,7 +23,7 @@ namespace back_end_arts.Controllers
 
         ///OrderDetail
         [HttpGet("OrderDetails")]
-        public async Task<IEnumerable<OrderDetail>> GetCategories()
+        public async Task<IEnumerable<OrderDetail>> GetOrderDetails()
         {
             return await db_orderdetail.ListAll();
         }
@@ -36,7 +37,7 @@ namespace back_end_arts.Controllers
         {
 
             await db_orderdetail.Insert(OrderDetail);
-            return CreatedAtAction(nameof(GetCategories), new { id = OrderDetail.DetailId }, OrderDetail);
+            return CreatedAtAction(nameof(GetOrderDetails), new { id = OrderDetail.DetailId }, OrderDetail);
         }
         [HttpPut("UpdateOrderDetail")]
         public async Task<ActionResult<OrderDetail>> UpdateOrderDetail([FromBody] OrderDetail OrderDetail)
