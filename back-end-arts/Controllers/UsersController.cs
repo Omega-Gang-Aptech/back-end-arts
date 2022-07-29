@@ -95,6 +95,7 @@ namespace back_end_arts.Controllers
                     userRequest.UserAvatar = "Images/Users/" + userRequest.UserId.ToString() + "/" + formFile.FileName;
 
                     var data = await db_User.GetById(userRequest.UserId);
+                    DateTime dateTime = DateTime.UtcNow.Date;
                     if (data != null)
                     {
                         data.UserFullName = userRequest.UserFullName;
@@ -104,7 +105,7 @@ namespace back_end_arts.Controllers
                         data.UserAvatar = userRequest.UserAvatar;
                         data.UserAddress = userRequest.UserAddress;
                         data.UserRole = userRequest.UserRole;
-                        data.UpdatedAt = userRequest.UpdatedAt;
+                        data.UpdatedAt = dateTime;
                         await db_User.Update(data);
                         return Ok(data);
                     }
@@ -113,6 +114,7 @@ namespace back_end_arts.Controllers
                 else
                 {
                     var data = await db_User.GetById(userRequest.UserId);
+                    DateTime dateTime = DateTime.UtcNow.Date;
                     if (data != null)
                     {
                         data.UserFullName = userRequest.UserFullName;
@@ -122,7 +124,7 @@ namespace back_end_arts.Controllers
                         data.UserAvatar = userRequest.UserAvatar;
                         data.UserAddress = userRequest.UserAddress;
                         data.UserRole = userRequest.UserRole;
-                        data.UpdatedAt = userRequest.UpdatedAt;
+                        data.UpdatedAt = dateTime;
                         await db_User.Update(data);
                         return Ok(data);
                     }

@@ -110,10 +110,6 @@ namespace back_end_arts.Controllers
                         await db_product.Update(product);
                     }
                 }
-                else
-                {
-                    
-                }
 
                 var response = new
                 {
@@ -149,9 +145,9 @@ namespace back_end_arts.Controllers
 
             try
             {
-                var formFile = files[0];
-                if (formFile.Length > 0)
+                if (files.Count > 0)
                 {
+                    var formFile = files[0];
                     var filePath = Path.Combine(_env.ContentRootPath, "Images/Products/", productRequest.ProductId.ToString());
                     if (!Directory.Exists(filePath))
                     {
@@ -169,37 +165,57 @@ namespace back_end_arts.Controllers
 
                     // Cap nhat lai url cua san pham sau luu xong hinh anh
                     productRequest.ProductImage = "Images/Products/" + productRequest.ProductId.ToString() + "/" + formFile.FileName;
-                    var updatePro = await db_product.Update(productRequest);
-                    return Ok(updatePro);
+
+                    var data = await db_product.GetById(productRequest.ProductId);
+                    DateTime dateTime = DateTime.UtcNow.Date;
+
+                    if (data != null)
+                    {
+                        data.ProductId = productRequest.ProductId;
+                        data.ProductPrice = productRequest.ProductPrice;
+                        data.ProductQuantity = productRequest.ProductQuantity;
+                        data.ProductImage = productRequest.ProductImage;
+                        data.ProductShortDescription = productRequest.ProductShortDescription;
+                        data.ProductLongDescription = productRequest.ProductLongDescription;
+                        data.ProductStatus = productRequest.ProductStatus;
+                        data.CategoryId = productRequest.CategoryId;
+                        data.UpdatedAt = dateTime;
+
+                        await db_product.Update(data);
+                        return Ok(data);
+                    }
+                    return Ok(data);
+
+                    //var updatePro = await db_product.Update(productRequest);
+                    //return Ok(updatePro);
                 }
                 else
                 {
-                    var updatePro = await db_product.Update(productRequest);
-                    return Ok(updatePro);
+                    var data = await db_product.GetById(productRequest.ProductId);
+                    DateTime dateTime = DateTime.UtcNow.Date;
+
+                    if (data != null)
+                    {
+                        data.ProductId = productRequest.ProductId;
+                        data.ProductPrice = productRequest.ProductPrice;
+                        data.ProductQuantity = productRequest.ProductQuantity;
+                        data.ProductImage = productRequest.ProductImage;
+                        data.ProductShortDescription = productRequest.ProductShortDescription;
+                        data.ProductLongDescription = productRequest.ProductLongDescription;
+                        data.ProductStatus = productRequest.ProductStatus;
+                        data.CategoryId = productRequest.CategoryId;
+                        data.UpdatedAt = dateTime;
+
+                        await db_product.Update(data);
+                        return Ok(data);
+                    }
+                    return Ok(data);
                 }
             }
             catch (Exception)
             {
                 return BadRequest();
             }
-
-            //var data = await db_product.GetById(Product.ProductId);
-            //if (data != null)
-            //{
-            //    data.ProductName = Product.ProductName;
-            //    data.ProductPrice = Product.ProductPrice;
-            //    data.ProductQuantity = Product.ProductQuantity;
-            //    data.ProductImage = Product.ProductImage;
-            //    data.ProductShortDescription = Product.ProductShortDescription;
-            //    data.ProductLongDescription = Product.ProductLongDescription;
-            //    data.ProductStatus = Product.ProductStatus;
-            //    data.UpdatedAt = Product.UpdatedAt;
-
-            //    await db_product.Update(data);
-            //    return Ok();
-            //}
-            //return NotFound();
-
         }
         [HttpDelete("ProductId")]
         public async Task<ActionResult> DeleteProduct(string id)
@@ -212,20 +228,6 @@ namespace back_end_arts.Controllers
             await db_product.Delete(data);
             return NoContent();
         }
-
-        //private async Task<string> initProductIDAsync(string CategoryId)
-        //{
-        //    int CategoryIdNUm = Int32.Parse(CategoryId);
-        //    //Category category = null;
-        //    var objCategory = await db_Category.GetById(CategoryIdNUm);
-        //    if (objCategory != null)
-        //    {
-        //        var objCateCd = objCategory.CategoryCode;
-        //    }
-        //    //var objProduct = await db_
-
-        //    return "";
-        //}
 
         private string generateProductID(string ProductCode, string ProductId)
         {
