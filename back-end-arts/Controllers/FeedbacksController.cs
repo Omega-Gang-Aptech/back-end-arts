@@ -23,7 +23,7 @@ namespace back_end_arts.Controllers
 
         ///Feedback
         [HttpGet("Feedbacks")]
-        public async Task<IEnumerable<Feedback>> GetCategories()
+        public async Task<IEnumerable<Feedback>> GetFeedbacks()
         {
             return await db_feedback.ListAll();
         }
@@ -37,7 +37,7 @@ namespace back_end_arts.Controllers
         {
 
             await db_feedback.Insert(Feedback);
-            return CreatedAtAction(nameof(GetCategories), new { id = Feedback.FeedbackId }, Feedback);
+            return CreatedAtAction(nameof(GetFeedbacks), new { id = Feedback.FeedbackId }, Feedback);
         }
         [HttpPut("UpdateFeedback")]
         public async Task<ActionResult<Feedback>> UpdateFeedback([FromBody] Feedback Feedback)
