@@ -55,8 +55,8 @@ namespace back_end_arts
                                   {
                                       builder.AllowAnyHeader()
             .AllowAnyMethod()
-            //.WithOrigins("http://localhost:3000")
-            .SetIsOriginAllowed(origin => true)
+            .WithOrigins("http://localhost:3000")
+            //.SetIsOriginAllowed(origin => true)
             .AllowCredentials();
                                   });
             });
