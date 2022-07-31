@@ -42,7 +42,7 @@ namespace back_end_arts.Controllers
 
         ///User
         [HttpGet("Users")]
-        public async Task<IEnumerable<User>> GetCategories()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             return await db_User.ListAll();
         }
@@ -56,7 +56,7 @@ namespace back_end_arts.Controllers
         {
             User.Password = EncodePassword(User.Password);
             await db_User.Insert(User);
-            return CreatedAtAction(nameof(GetCategories), new { id = User.UserId }, User);
+            return CreatedAtAction(nameof(GetUsers), new { id = User.UserId }, User);
         }
         [HttpPut("UpdateUser")]
         public async Task<ActionResult<User>> UpdateUser(List<IFormFile> files, [FromForm] string userJson)
