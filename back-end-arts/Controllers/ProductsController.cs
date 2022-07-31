@@ -22,7 +22,7 @@ namespace back_end_arts.Controllers
         private readonly IWebHostEnvironment _env;
         private IArtsRepository<Product> db_product;
         private IArtsRepository<Category> db_category;
-        public ProductsController(IWebHostEnvironment env,IArtsRepository<Product> db_product, IArtsRepository<Category> db_category)
+        public ProductsController(IWebHostEnvironment env, IArtsRepository<Product> db_product, IArtsRepository<Category> db_category)
         {
             _env = env;
             this.db_product = db_product;
@@ -32,9 +32,18 @@ namespace back_end_arts.Controllers
 
         ///Product
         [HttpGet("Products")]
-        public async Task<IEnumerable<Product>> GetCategories()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            return await db_product.ListAll();
+            try
+            {
+                return await db_product.ListAll();
+            }
+            catch (Exception ex)
+            {
+
+                return NotFound(ex.ToString());
+            }
+
         }
         [HttpGet("Product")]
         public async Task<ActionResult<Product>> GetProduct(string id)
@@ -65,11 +74,11 @@ namespace back_end_arts.Controllers
                 var objCategory = await db_category.GetById(Int32.Parse(productRequest.CategoryId.ToString()));
                 var objProductLst = await db_product.ListAll();
                 var maxProdCd = objProductLst
-                                    .Where(item => item.ProductId.Substring(0, 2) == objCategory.CategoryCode).Max(item=>item.ProductId);
+                                    .Where(item => item.ProductId.Substring(0, 2) == objCategory.CategoryCode).Max(item => item.ProductId);
 
                 var newProdCd = this.generateProductID(objCategory.CategoryCode.ToString(), maxProdCd);
                 // -----------------------------------------------------------------------------------------------------
-               
+
                 // Khoi tao mot product moi
                 Product product = null;
                 product = new Product()
