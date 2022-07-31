@@ -90,7 +90,7 @@ namespace back_end_arts.Controllers
                     ProductQuantity = productRequest.ProductQuantity,
                     ProductShortDescription = productRequest.ProductShortDescription,
                     ProductLongDescription = productRequest.ProductLongDescription,
-                    ProductStatus = productRequest.ProductQuantity,
+                    ProductStatus = productRequest.ProductStatus,
                     CategoryId = productRequest.CategoryId, // *
                     UpdatedAt = productRequest.UpdatedAt
                 };
