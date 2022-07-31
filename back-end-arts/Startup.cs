@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,6 +38,7 @@ namespace back_end_arts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
 
             #region Connect DB
             services.AddDbContext<ArtsDbWithKeyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("artscon")));
@@ -53,13 +55,20 @@ namespace back_end_arts
                 options.AddPolicy(name: AllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.AllowAnyHeader()
-            .AllowAnyMethod()
-            .WithOrigins("http://localhost:3000")
-            .AllowCredentials();
-                                  });
+                                        builder.AllowAnyHeader()
+                                        .AllowAnyMethod()
+                                        //.WithOrigins(origin => true)
+                                        .SetIsOriginAllowed(origin => true)
+                                        .AllowCredentials();
+                                        
+                                                              });
             });
             #endregion
+
+            services.AddControllers().AddNewtonsoftJson(x =>
+            {
+                x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
             #region Add Swagger
             services.AddSwaggerGen(c =>
@@ -123,13 +132,17 @@ namespace back_end_arts
                 jwt.TokenValidationParameters = tokenValidationParams;
             });
             #endregion
-            services.AddCors();
-            services.AddControllers();
+          
+            //services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
+            //app.UseCors(options =>options.WithOrigins("http://localhost:3000")
+            //                      .AllowAnyHeader()
+            //                      .AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -139,9 +152,15 @@ namespace back_end_arts
 
             app.UseHttpsRedirection();
             app.UseRouting();
-
+            app.UseCors(AllowSpecificOrigins);
             app.UseAuthentication();
             app.UseAuthorization();
+
+            if (!Directory.Exists(Path.Combine(env.ContentRootPath, "Images")))
+            {
+                Directory.CreateDirectory(Path.Combine(env.ContentRootPath, "Images"));
+            }
+
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Images")),

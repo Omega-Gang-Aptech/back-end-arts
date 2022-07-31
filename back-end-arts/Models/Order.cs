@@ -20,6 +20,7 @@ namespace back_end_arts.Models
         public int? OrderStatus { get; set; }
         public int? OrderPaymentMethods { get; set; }
         public int? OrderDeliveryType { get; set; }
+        public double? OrderTotal { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
         public virtual User OrderUser { get; set; }

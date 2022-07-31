@@ -26,18 +26,12 @@ namespace back_end_arts.Models
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-3LRCUJV; Initial Catalog=ArtsDbWithKey; integrated security = true");
-            }
-        }
+    
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            base.OnModelCreating(modelBuilder);
+           
 
             modelBuilder.Entity<Category>(entity =>
             {
@@ -126,6 +120,8 @@ namespace back_end_arts.Models
 
                 entity.Property(e => e.OrderStatus).HasColumnName("orderStatus");
 
+                entity.Property(e => e.OrderTotal).HasColumnName("orderTotal");
+
                 entity.Property(e => e.OrderUserId).HasColumnName("orderUserId");
 
                 entity.Property(e => e.UpdatedAt)
@@ -141,7 +137,7 @@ namespace back_end_arts.Models
             modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => e.DetailId)
-                    .HasName("PK__OrderDet__83077859243A345E");
+                    .HasName("PK__OrderDet__83077859B1EE9EC9");
 
                 entity.ToTable("OrderDetail");
 
@@ -160,6 +156,10 @@ namespace back_end_arts.Models
                     .IsUnicode(false)
                     .HasColumnName("detailProductId")
                     .IsFixedLength(true);
+
+                entity.Property(e => e.DetailProductImage)
+                    .IsUnicode(false)
+                    .HasColumnName("detailProductImage");
 
                 entity.Property(e => e.DetailProductName)
                     .HasMaxLength(150)
@@ -319,9 +319,9 @@ namespace back_end_arts.Models
                     .HasConstraintName("FK__User__userRole__38996AB5");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+          
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+      
     }
 }

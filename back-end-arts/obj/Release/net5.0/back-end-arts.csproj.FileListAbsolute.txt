@@ -1,0 +1,213 @@
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\appsettings.Development.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\appsettings.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.exe
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.deps.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.dev.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Ardalis.Specification.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Humanizer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.OpenApi.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.AssemblyReference.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfoInputs.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfo.cs
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CoreCompileInputs.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.Manifest.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.xml
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\scopedcss\bundle\back-end-arts.styles.css
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.RazorTargetAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CopyComplete
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.genruntimeconfig.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Cors.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Http.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Http.Cors.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\appsettings.Development.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\appsettings.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.exe
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.deps.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.dev.json
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Ardalis.Specification.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Humanizer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Cors.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Http.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Web.Http.Cors.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Microsoft.OpenApi.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.AssemblyReference.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfoInputs.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfo.cs
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CoreCompileInputs.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.Manifest.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.xml
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\scopedcss\bundle\back-end-arts.styles.css
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.RazorTargetAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CopyComplete
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Project 3\back-end-arts-official-final\back-end-arts-official\back-end-arts\obj\Release\net5.0\back-end-arts.genruntimeconfig.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\appsettings.Development.json
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\appsettings.json
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.exe
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.deps.json
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.json
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.runtimeconfig.dev.json
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Ardalis.Specification.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Humanizer.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Web.Cors.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Web.Http.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Web.Http.Cors.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Microsoft.OpenApi.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.AssemblyReference.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfoInputs.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.AssemblyInfo.cs
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CoreCompileInputs.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.Manifest.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\staticwebassets\back-end-arts.StaticWebAssets.xml
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\scopedcss\bundle\back-end-arts.styles.css
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.RazorTargetAssemblyInfo.cache
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.csproj.CopyComplete
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\ref\back-end-arts.dll
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.pdb
+C:\Users\Enegry\Desktop\Practice\backEndProj3UploadNewFile\back-end-arts\obj\Release\net5.0\back-end-arts.genruntimeconfig.cache
