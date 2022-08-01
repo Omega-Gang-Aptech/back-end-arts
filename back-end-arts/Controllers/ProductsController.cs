@@ -190,6 +190,7 @@ namespace back_end_arts.Controllers
                     if (data != null)
                     {
                         data.ProductId = productRequest.ProductId;
+                        data.ProductName = productRequest.ProductName;
                         data.ProductPrice = productRequest.ProductPrice;
                         data.ProductQuantity = productRequest.ProductQuantity;
                         data.ProductImage = productRequest.ProductImage;
@@ -219,6 +220,7 @@ namespace back_end_arts.Controllers
                     if (data != null)
                     {
                         data.ProductId = productRequest.ProductId;
+                        data.ProductName = productRequest.ProductName;
                         data.ProductPrice = productRequest.ProductPrice;
                         data.ProductQuantity = productRequest.ProductQuantity;
                         data.ProductImage = productRequest.ProductImage;
