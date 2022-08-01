@@ -6,11 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     //[Authorize]
     public class FeedbacksController : ControllerBase
     {
@@ -39,7 +41,7 @@ namespace back_end_arts.Controllers
             await db_feedback.Insert(Feedback);
             return CreatedAtAction(nameof(GetFeedbacks), new { id = Feedback.FeedbackId }, Feedback);
         }
-        [HttpPut("UpdateFeedback")]
+        [HttpPost("UpdateFeedback")]
         public async Task<ActionResult<Feedback>> UpdateFeedback([FromBody] Feedback Feedback)
         {
             var data = await db_feedback.GetById(Feedback.FeedbackId);

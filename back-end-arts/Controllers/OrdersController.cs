@@ -10,11 +10,13 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class OrdersController : ControllerBase
     {
         private IArtsRepository<Order> db_order;
@@ -61,7 +63,7 @@ namespace back_end_arts.Controllers
             return Ok(order);
             //return CreatedAtAction(nameof(GetOrders), new { id = order.OrderId }, Order);
         }
-        [HttpPut("UpdateOrder")]
+        [HttpPost("UpdateOrder")]
         public async Task<ActionResult<Order>> UpdateOrder([FromBody] Order Order)
         {
             var data = await db_order.GetById(Order.OrderId);
