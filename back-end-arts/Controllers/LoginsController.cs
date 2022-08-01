@@ -14,11 +14,13 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LoginsController : ControllerBase
     {
         Byte[] originalBytes;

@@ -7,11 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     //[Authorize]
     public class CategoriesController : ControllerBase
     {
@@ -41,7 +43,7 @@ namespace back_end_arts.Controllers
             await db_category.Insert(category);
             return CreatedAtAction(nameof(GetCategories), new { id = category.CategoryId }, category);
         }
-        [HttpPut("UpdateCategory")]
+        [HttpPost("UpdateCategory")]
         public async Task<ActionResult<Category>> UpdateCategory([FromBody] Category category)
         {
             var data = await db_category.GetById(category.CategoryId);

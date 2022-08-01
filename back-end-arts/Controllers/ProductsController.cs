@@ -8,17 +8,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
+using System.Web.Http.Filters;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [AllowCrossSiteJson]
     //[Authorize]
     public class ProductsController : ControllerBase
     {
+        readonly string domainReact = "https://omegay.tech/";
         private readonly IWebHostEnvironment _env;
         private IArtsRepository<Product> db_product;
         private IArtsRepository<Category> db_category;
@@ -40,7 +47,6 @@ namespace back_end_arts.Controllers
             }
             catch (Exception ex)
             {
-
                 return NotFound(ex.ToString());
             }
 
@@ -133,6 +139,8 @@ namespace back_end_arts.Controllers
                     product.CategoryId,
                     product.UpdatedAt,
                 };
+
+                //var responseFE = Ok(response);
                 return Ok(response);
             }
             catch (Exception ex)
@@ -140,7 +148,8 @@ namespace back_end_arts.Controllers
                 throw;
             }
         }
-        [HttpPut("UpdateProduct")]
+
+        [HttpPost("UpdateProduct")]
         public async Task<ActionResult<Product>> UpdateProduct(List<IFormFile> files, [FromForm] string productJson)
         {
             var options = new JsonSerializerOptions
@@ -193,6 +202,10 @@ namespace back_end_arts.Controllers
                         await db_product.Update(data);
                         return Ok(data);
                     }
+                    //var response = Request.Headers.Add();
+                    //var response = Request.CreateResponse(HttpStatusCode.OK, data);
+                    //var responstFull = Ok(data);
+
                     return Ok(data);
 
                     //var updatePro = await db_product.Update(productRequest);
@@ -295,4 +308,15 @@ namespace back_end_arts.Controllers
             }
         }
     }
+    public class AllowCrossSiteJsonAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+        {
+            if (actionExecutedContext.Response != null)
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            base.OnActionExecuted(actionExecutedContext);
+        }
+    }
+
 }

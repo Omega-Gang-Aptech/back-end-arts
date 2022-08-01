@@ -13,11 +13,13 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     //[Authorize]
     public class UsersController : ControllerBase
     {
@@ -58,7 +60,8 @@ namespace back_end_arts.Controllers
             await db_User.Insert(User);
             return CreatedAtAction(nameof(GetUsers), new { id = User.UserId }, User);
         }
-        [HttpPut("UpdateUser")]
+        [HttpPost("UpdateUser")]
+        
         public async Task<ActionResult<User>> UpdateUser(List<IFormFile> files, [FromForm] string userJson)
         {
             var options = new JsonSerializerOptions
