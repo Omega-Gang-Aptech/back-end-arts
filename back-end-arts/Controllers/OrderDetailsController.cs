@@ -6,11 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace back_end_arts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     //[Authorize]
     public class OrderDetailsController : ControllerBase
     {
@@ -39,7 +41,7 @@ namespace back_end_arts.Controllers
             await db_orderdetail.Insert(OrderDetail);
             return CreatedAtAction(nameof(GetOrderDetails), new { id = OrderDetail.DetailId }, OrderDetail);
         }
-        [HttpPut("UpdateOrderDetail")]
+        [HttpPost("UpdateOrderDetail")]
         public async Task<ActionResult<OrderDetail>> UpdateOrderDetail([FromBody] OrderDetail OrderDetail)
         {
             var data = await db_orderdetail.GetById(OrderDetail.DetailId);
